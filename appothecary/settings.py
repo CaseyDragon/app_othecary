@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'appothecary',
     'recipemaker',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
