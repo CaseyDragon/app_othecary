@@ -1,0 +1,22 @@
+{% extends 'recipemaker/base.html' %} 
+{% block content %}
+
+<p>choose lye water ratio 33%, 38%, 2:1, 3:1</p>
+<p>choose super fat percentage, 0-20% standard is 5</p>
+
+<a href="/oils">Oils</a>
+<p>choose percentages of oils</p>
+<p>lye for each oil = percent * 16 * sap value
+    total lye in ounces = sum of lye totals
+    actual lye in ounces = total lye * (1- % of sf(such as 1 - .05 for a 5% sf))</p>
+<a href="/additives">Additives</a>
+<p> choose percentages</p>
+<p>give recipe a name</p>
+
+<form method="POST" action="/create/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit", name="save">Save Recipe</button>
+</form>
+
+{% endblock %}
