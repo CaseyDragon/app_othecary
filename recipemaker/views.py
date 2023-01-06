@@ -13,15 +13,14 @@ def create(request):
         form = CreateNewRecipe(request.POST)
         if form.is_valid():
             recipe = form.save()
-            return redirect('recipe_list', id=recipe.id)
-            # return HttpResponseRedirect('/create?submitted=True')
+            # return redirect('recipe_list', id=recipe.id)
+            return HttpResponseRedirect('/create')
             # n=form.cleaned_data["recipename"]
             # recipe = Recipes(n)
             # recipe.save()
             # response.user.recipes.create(recipe)
     else:
-        form = CreateNewRecipe
-        #  
+        form = CreateNewRecipe()
     return render(request, 'recipemaker/create.html', {"form":form})
 
 def oils_list(request):
