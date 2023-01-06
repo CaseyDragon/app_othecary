@@ -1,0 +1,24 @@
+{% extends 'recipemaker/base.html' %}
+{% block content %}
+
+<div >
+    {% if user.is_authenticated %} 
+        <ul class="is-size-3-mobile is-size-1-desktop has-text-centered py-5">
+            <li class="py-3"><a href="/create">Create a Recipe</a></li>        
+            <li class="py-3"><a href="/myrecipes">My Recipes</a></li>
+            <li class="py-3"><a href="/volume">Volume Calc</a></li>
+            <li class="py-3"><a href="/formulas">Formulas</a></li>
+        </ul>
+    {% else %}
+        <div class="container has-text-centered is-size-4 is-subtitle py-6">
+            <p class="is-size-2 is-title pb-3">Welcome to the APPothecary!</p>
+            <p>Already have an account?</p>
+            <p class="py-3"><button class="button is-primary is-rounded"><a href="/registration/login" >Login</a></button></p>
+            <p class="my-3"><img src="static/images/rightsidebubbles.png" alt="bubbles" class="" style="max-height: 80px" /></p>
+            <p>Are you new here?</p>
+            <p class="py-3"><button class="button is-primary is-rounded"><a href="/accounts/signup">Signup</a></button></p>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
