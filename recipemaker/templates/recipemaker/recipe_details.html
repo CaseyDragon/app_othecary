@@ -1,0 +1,74 @@
+{% extends 'recipemaker/base.html' %} {% block content %}
+
+<h1 class="is-size-3-mobile is-size-1-desktop has-text-centered ">{{recipe.name}}</h1>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <h1 class="is-size-5-mobile is-size-3-desktop has-text-centered mb-3">Lye Solution:</h3>
+                <p class="is-size-7-mobile is-size-5-desktop">
+                Sodium Hydroxide: {{recipe.lyeamount}} ounces</br>
+                Water: {{recipe.wateramount}} ounces</br>
+                Lye additives: {{recipe.lyeadditives}} </p>
+            </div>
+            <div class="column">
+                <h1 class="is-size-5-mobile is-size-3-desktop has-text-centered mb-3">Oils:</h3>
+                <p class="is-size-7-mobile is-size-5-desktop">
+                   <ul>
+                        <li>{{recipe.oilname1}}: {{recipe.oilamount1}} ounces</li>
+                        <li>{{recipe.oilname2}}: {{recipe.oilamount2}} ounces</li>
+                        <li>{{recipe.oilname3}}: {{recipe.oilamount3}} ounces</li>
+                        <li>{{recipe.oilname4}}: {{recipe.oilamount4}} ounces</li>
+                        <li>{{recipe.oilname5}}: {{recipe.oilamount5}} ounces</li>
+                    </ul>
+                Oil additives: {{recipe.oiladdtives}} 
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- <section class="section has-text-centered">
+    <div class="container">
+        <h1 class="is-size-5-mobile is-size-3-desktop has-text-centered mb-3">Scale Your Recipe</h3>
+<form method="post" action="#">
+    {% csrf_token %} -->
+    <!-- {{form.as_p}}
+    {{recipe.name}}
+    {{recipe.oilname}}
+    {{recipe.superfat}}
+    {{recipe.lyetype}}
+    {{recipe.lyeamount}}
+
+   add functionality to delete recipe, scale recipe, maybe edit it but unsure
+    <form>
+        <div class="field">
+            <label class="label">Scale to:</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="in ounces">
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+            <label class="checkbox">
+               <input type="checkbox">
+               ounces
+            </label>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+            <label class="checkbox">
+               <input type="checkbox">
+               pounds
+            </label>
+            </div>
+        </div>
+        <div class="">
+            <button class="button is-primary is-rounded">Scale it</button>
+        </div>
+    </form> 
+</section> --> 
+
+{% endblock %}
