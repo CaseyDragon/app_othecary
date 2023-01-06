@@ -89,7 +89,14 @@ WSGI_APPLICATION = 'appothecary.wsgi.application'
 
 # 
 DATABASES = {
-  'default': dj_database_url.config(conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cndragon/recipemaker',
+        'USER': 'cndragon',
+        'PASSWORD': 'v2_3xiSr_bJQ9rd3L74ZA8KUXja9dXWj',
+        'HOST': 'db.bit.io',
+        'PORT': '5432',
+    }
 }
 
 
