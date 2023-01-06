@@ -12,6 +12,7 @@ This app is currently available here:
 
 * [Django](https://www.djangoproject.com/) 
 * [PostGres](https://www.postgresql.org/)
+* [Bit.io](https://bit.io/dashboard)
 * [Bulma](https://bulma.io/)
 
 
@@ -20,11 +21,14 @@ When using this app a soapmaker will be able to calculate the volume of a mold s
 
 
 ## Wireframes
+[Site plan](https://whimsical.com/appothecary-M3ZV4JysdkUMUJ6GfziNt7)
+[App pages](https://whimsical.com/appothecary-pages-SrAQXwT1XppshyJJt4VPbT)
+[ERD](https://whimsical.com/appothecary-erd-CACWJPNTHnyHbqZjgAZLwM)
 
 
 
 ## Struggles
-
+I had several struggles with postgres and deployment. Ultimately, i was able to use bit.io to help deploy my database and heroku to deploy the app.
 
 
 ## Future Plans
@@ -38,6 +42,6 @@ I plan to build out the database to include for oils and more oil properties. I 
 * lovinsoap.com
 * modernsoapmaking.com
 * techwithtim - youtube channel
-* David, Alo, and Jan!
+* David, Alo, and Jan! And Kathrun and Hayk!
 
 

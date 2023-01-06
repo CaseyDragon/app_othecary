@@ -8,21 +8,21 @@ def home(response):
     return render(response, 'recipemaker/home.html', {})
 
 def create(request):
-    submitted = False
+    # submitted = False
     if request.method == 'POST':
         form = CreateNewRecipe(request.POST)
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/create?submitted=True')
+            recipe = form.save()
+            return redirect('recipe_list', id=recipe.id)
+            # return HttpResponseRedirect('/create?submitted=True')
             # n=form.cleaned_data["recipename"]
             # recipe = Recipes(n)
             # recipe.save()
             # response.user.recipes.create(recipe)
     else:
         form = CreateNewRecipe
-        if 'submitted' in request.GET:
-            submitted = True
-    return render(request, 'recipemaker/create.html', {"form":form, "submitted":submitted})
+        #  
+    return render(request, 'recipemaker/create.html', {"form":form})
 
 def oils_list(request):
     oils = Oils.objects.all()
