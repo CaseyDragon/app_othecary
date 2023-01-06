@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Oils, Additives, Recipes
@@ -12,10 +12,10 @@ def create(response):
         form = CreateNewRecipe(response.POST)
         if form.is_valid():
             n=form.cleaned_data["recipename"]
-            rec = Recipes(name=n)
+            rec = Recipes(n)
             rec.save()
 
-        return HttpResponseRedirect('/%i' %rec.id)
+        return redirect('/recipemaker/myrecipes')
     else:
         form = CreateNewRecipe()
     return render(response, 'recipemaker/create.html', {"form":form})
