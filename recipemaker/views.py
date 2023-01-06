@@ -8,7 +8,16 @@ def home(response):
     return render(response, 'recipemaker/home.html', {})
 
 def create(response):
-    form = CreateNewRecipe()
+    if response.method == 'POST':
+        form = CreateNewRecipe(response.POST)
+        if form.is_valid():
+            n=form.cleaned_data["recipename"]
+            rec = Recipes(name=n)
+            rec.save()
+
+        return HttpResponseRedirect('/%i' %rec.id)
+    else:
+        form = CreateNewRecipe()
     return render(response, 'recipemaker/create.html', {"form":form})
 # @login_required(login_url='/registration/login')
 # def create(request):

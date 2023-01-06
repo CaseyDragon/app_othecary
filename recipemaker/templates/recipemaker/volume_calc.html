@@ -1,4 +1,5 @@
 {% extends 'recipemaker/base.html' %} 
+{% load static %}
 {% block content %}
 <h1 class="is-size-3-mobile is-size-1-desktop has-text-centered ">Volume Calculator</h1>
 <section class="section">
@@ -17,7 +18,7 @@
             <div class="column">
                 <h1 class="is-size-5-mobile is-size-3-desktop has-text-centered mb-3">Irregular</h3>
                 <p class="is-size-5-mobile is-size-5-desktop"> <img src="{% static 'images/irregularmold.png' %}" alt="cavity mold" style="max-height: 80px" /></p>
-                fill mold with water, number of ounces * 1.8 = cubic inches in mold, * 0.4 for number of ounces of oil </p>
+                <p>fill mold with water, number of ounces * 1.8 = cubic inches in mold, * 0.4 for number of ounces of oil </p>
             </div>
         </div>
     </div>
