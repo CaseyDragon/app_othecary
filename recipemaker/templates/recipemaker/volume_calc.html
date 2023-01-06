@@ -2,23 +2,23 @@
 {% load static %}
 {% block content %}
 <h1 class="is-size-3-mobile is-size-1-desktop has-text-centered ">Volume Calculator</h1>
-<section class="section">
+<section class="section has-text-centered">
     <div class="container">
         <div class="columns">
             <div class="column">
                 <h1 class="is-size-5-mobile is-size-3-desktop has-text-centered mb-3">Cylinder</h3>
-                <p class="is-size-7-mobile is-size-5-desktop"> <img src="{% static 'images/cylinder.png' %}" alt="cylinder mold" style="max-height: 80px" /></p>
-                <p>formula for cylinder V= pi* rsquared * height(in cubic inches) * 0.4 to find the total ounces of oil </p>
+                <p class="is-size-7-mobile is-size-5-desktop"> <img src="{% static 'images/cylinder.png' %}" alt="cylinder mold" style="max-height: 150px" class="mb-6 pb-3" /></p>
+                <p>MEASURE IN INCHES!</p><p>Volume = 3.14 * radium * radius * height * 0.4 = the total ounces of oil to fill mold </p>
             </div>
             <div class="column">
                 <h1 class="is-size-5-mobile is-size-3-desktop has-text-centered mb-3">Rectangle</h3>
-                <p class="is-size-5-mobile is-size-5-desktop">  <img src="{% static 'images/rectanglemold.png' %}" alt="rectangle mold" style="max-height: 80px" /></p>
-                <p>formula for rectangle V= L* W * H(in cubic inches) * 0.4 to find the total ounces of oil </p>
+                <p class="is-size-5-mobile is-size-5-desktop">  <img src="{% static 'images/rectanglemold.png' %}" alt="rectangle mold" style="max-height: 200px" /></p>
+                <p>MEASURE IN INCHES!</p><p>Volume = Length * Width * Height * 0.4 = the total ounces of oil to fill mold</p>
             </div>
             <div class="column">
                 <h1 class="is-size-5-mobile is-size-3-desktop has-text-centered mb-3">Irregular</h3>
-                <p class="is-size-5-mobile is-size-5-desktop"> <img src="{% static 'images/irregularmold.png' %}" alt="cavity mold" style="max-height: 80px" /></p>
-                <p>fill mold with water, number of ounces * 1.8 = cubic inches in mold, * 0.4 for number of ounces of oil </p>
+                <p class="is-size-5-mobile is-size-5-desktop"> <img src="{% static 'images/irregularmold.png' %}" alt="cavity mold" style="max-height: 200px" /></p>
+                <p>MEASURE IN FLUID OUNCES!</p><p>fill mold with water and measure water. Volume = number of ounces * 1.8 * 0.4 = the total ounces of oil to fill mold </p>
             </div>
         </div>
     </div>
