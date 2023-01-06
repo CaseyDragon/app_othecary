@@ -1,0 +1,8 @@
+<h2>Additives</h2>
+<ul>
+  {% for additive in additives %}
+  <li>
+    <a href="{% url 'additives_detail' id=additive.id %}">{{ additive.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
