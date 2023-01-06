@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'appothecary',
     'recipemaker',
     'django_extensions',
+    'accounts',
 ]
 
 MIDDLEWARE = [

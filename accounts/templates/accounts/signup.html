@@ -1,0 +1,13 @@
+{% extends "recipemaker/base.html" %}
+
+{% block content %}
+<div class="is-title has-text-centered is-size-1 pt-6">Sign up to create amazing soap recipes!</div>
+<form method="POST" action="{% url 'signup' %}" class="has-text-centered pt-5">
+  {% csrf_token %} 
+  {{form.as_p}}
+  <p class="py-5"><button class="button is-primary is-rounded" type="submit">Sign Up</button></p>
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+<p class="has-text-centered is-size-6 pb-6">Already have an account? <a href="/registration/login">Login</a></p>
+
+{% endblock %}

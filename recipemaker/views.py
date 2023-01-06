@@ -9,7 +9,7 @@ def home(response):
 
 def create(response):
     form = CreateNewRecipe()
-    return render(response, 'recipemaker/create.html', {})
+    return render(response, 'recipemaker/create.html', {"form":form})
 # @login_required(login_url='/registration/login')
 # def create(request):
 #     form = CreateNewRecipe()
