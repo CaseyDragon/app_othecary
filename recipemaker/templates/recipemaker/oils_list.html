@@ -1,0 +1,10 @@
+{% extends 'recipemaker/base.html' %} {% block content %}
+<h2>Oils</h2>
+<ul>
+  {% for oil in oils %}
+  <li>
+    <a href="{% url 'oils_detail' id=oil.id %}">{{ oil.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -23,23 +23,6 @@ def create(request):
         if 'submitted' in request.GET:
             submitted = True
     return render(request, 'recipemaker/create.html', {"form":form, "submitted":submitted})
-# @login_required(login_url='/registration/login')
-# def create(request):
-#     form = CreateNewRecipe()
-#     if request.method == 'POST':
-#         form = CreateNewRecipe(request.POST)
-#         if form.is_valid():
-#             # Recipes.user.objects.create(**form.cleaned_data)
-#             n = form.cleaned_data["recipename"]
-#             recipe = Recipes(name=n)
-#             # recipe.save()
-#             # request.user.recipes.create(recipe)
-#         return HttpResponseRedirect('/%i' %recipe.id)
-#     else:    
-#         form = CreateNewRecipe()
-#     return render(request, 'recipemaker/create.html', {'form':form})
-
-
 
 def oils_list(request):
     oils = Oils.objects.all()
@@ -67,13 +50,7 @@ def my_recipes(response):
 
 @login_required(login_url='/registration/login')
 def recipe_detail(response, id):
-    recipe = Recipes.objects.get(id=id)
-   
-    # work out code for scaling here I believe
-    # if response.POST.get('save'):
-
-    # elif response.POST.get('scaleIt'):
-    #     pass    
+    recipe = Recipes.objects.get(id=id)   
     return render(response, 'recipemaker/recipe_detail.html', {'recipe': recipe})
 
 def volume_calc(response):
