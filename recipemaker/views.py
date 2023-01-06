@@ -7,18 +7,22 @@ from .forms import CreateNewRecipe
 def home(response):
     return render(response, 'recipemaker/home.html', {})
 
-def create(response):
-    if response.method == 'POST':
-        form = CreateNewRecipe(response.POST)
+def create(request):
+    submitted = False
+    if request.method == 'POST':
+        form = CreateNewRecipe(request.POST)
         if form.is_valid():
-            n=form.cleaned_data["recipename"]
-            rec = Recipes(n)
-            rec.save()
-
-        return redirect('/recipemaker/myrecipes')
+            form.save()
+            return HttpResponseRedirect('/create?submitted=True')
+            # n=form.cleaned_data["recipename"]
+            # recipe = Recipes(n)
+            # recipe.save()
+            # response.user.recipes.create(recipe)
     else:
-        form = CreateNewRecipe()
-    return render(response, 'recipemaker/create.html', {"form":form})
+        form = CreateNewRecipe
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request, 'recipemaker/create.html', {"form":form, "submitted":submitted})
 # @login_required(login_url='/registration/login')
 # def create(request):
 #     form = CreateNewRecipe()
@@ -34,6 +38,8 @@ def create(response):
 #     else:    
 #         form = CreateNewRecipe()
 #     return render(request, 'recipemaker/create.html', {'form':form})
+
+
 
 def oils_list(request):
     oils = Oils.objects.all()
